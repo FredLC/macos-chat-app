@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Chatter" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -682,9 +683,9 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -700,18 +701,83 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
+        <!--ToolbarVC-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ToolbarVC" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <containerView translatesAutoresizingMaskIntoConstraints="NO" id="PuZ-qe-wRg">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="220"/>
+                                <connections>
+                                    <segue destination="Agw-gy-Ffh" kind="embed" id="TaN-I3-Hj3"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="PuZ-qe-wRg" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="2h0-F3-P1G"/>
+                            <constraint firstAttribute="trailing" secondItem="PuZ-qe-wRg" secondAttribute="trailing" id="BTN-Lu-zD4"/>
+                            <constraint firstItem="PuZ-qe-wRg" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="50" id="kEe-fQ-0Zq"/>
+                            <constraint firstAttribute="bottom" secondItem="PuZ-qe-wRg" secondAttribute="bottom" id="o1y-Nt-8rV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="zxU-oW-cGk">
+            <objects>
+                <splitViewController id="Agw-gy-Ffh" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="1bC-nj-J6t"/>
+                        <splitViewItem id="1XF-L6-lbm"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="3GF-Pf-ma8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="Agw-gy-Ffh" id="uCW-nm-7PV"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="3GF-Pf-ma8" id="pom-nY-0E0"/>
+                        <segue destination="AfW-1w-Tys" kind="relationship" relationship="splitItems" id="6WD-fn-VMh"/>
+                        <segue destination="4DV-P1-aRd" kind="relationship" relationship="splitItems" id="944-KJ-Tzj"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="ILN-8e-lL6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="74" y="1123"/>
+        </scene>
+        <!--ChannelVC-->
+        <scene sceneID="XbK-Jb-wc9">
+            <objects>
+                <viewController id="AfW-1w-Tys" customClass="ChannelVC" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="pmM-MQ-HcO">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="pDm-MS-0ts" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="626" y="854"/>
+        </scene>
+        <!--ChatVC-->
+        <scene sceneID="YWj-OB-Cpv">
+            <objects>
+                <viewController id="4DV-P1-aRd" customClass="ChatVC" customModule="Chatter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="1nt-X0-pHX">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="11q-iq-biq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="1226"/>
         </scene>
     </scenes>
 </document>
