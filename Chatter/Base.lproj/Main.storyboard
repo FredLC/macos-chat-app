@@ -754,6 +754,11 @@
                             <constraint firstAttribute="bottom" secondItem="PuZ-qe-wRg" secondAttribute="bottom" id="o1y-Nt-8rV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginImage" destination="O5f-JL-6Pi" id="nJZ-8c-UJc"/>
+                        <outlet property="loginLabel" destination="N9b-QS-13j" id="vNe-wq-oyi"/>
+                        <outlet property="loginStackView" destination="taV-UB-ltJ" id="wXM-4Q-F0r"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -879,6 +884,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="addChannelButtonClicked:" target="AfW-1w-Tys" id="88i-dh-mhd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -897,6 +905,11 @@
                             <constraint firstItem="cDH-ZM-w8c" firstAttribute="centerY" secondItem="iYv-29-WPH" secondAttribute="centerY" id="sPR-E7-kyq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addChannelButton" destination="cDH-ZM-w8c" id="Fmr-Ae-nM2"/>
+                        <outlet property="tableView" destination="MIf-r2-KYq" id="6hj-5E-uze"/>
+                        <outlet property="usernameLabel" destination="by5-6j-pe2" id="Crd-ll-jkI"/>
+                    </connections>
                 </viewController>
                 <customObject id="pDm-MS-0ts" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -993,15 +1006,15 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="UIY-06-gO1">
+                            <customView appearanceType="aqua" translatesAutoresizingMaskIntoConstraints="NO" id="UIY-06-gO1">
                                 <rect key="frame" x="8" y="10" width="391" height="100"/>
                                 <subviews>
-                                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-eX-Wca">
+                                    <textField focusRingType="none" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-eX-Wca">
                                         <rect key="frame" x="6" y="6" width="379" height="88"/>
-                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="3uN-6C-dKE">
+                                        <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Message:" drawsBackground="YES" id="3uN-6C-dKE">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </textFieldCell>
                                     </textField>
                                 </subviews>
@@ -1019,6 +1032,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sendButtonClicked:" target="4DV-P1-aRd" id="fDg-sG-e5n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -1039,6 +1055,15 @@
                             <constraint firstAttribute="trailing" secondItem="6PL-I0-BO7" secondAttribute="trailing" constant="8" id="vmm-1d-8nc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="channelDescription" destination="rlJ-Ql-pHI" id="FRu-hj-eGd"/>
+                        <outlet property="channelTitle" destination="eFB-Uf-cYY" id="LEJ-1O-KhV"/>
+                        <outlet property="messageBoxOutline" destination="UIY-06-gO1" id="nsT-Wm-EDC"/>
+                        <outlet property="messageTextField" destination="cfk-eX-Wca" id="O7X-Hv-udo"/>
+                        <outlet property="sendButton" destination="6PL-I0-BO7" id="6Wh-CJ-GFb"/>
+                        <outlet property="tableView" destination="Kg4-KU-l4x" id="IBx-iU-j6g"/>
+                        <outlet property="usersTypingLabel" destination="9aA-6s-2Ox" id="fdU-1f-XJ4"/>
+                    </connections>
                 </viewController>
                 <customObject id="11q-iq-biq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
