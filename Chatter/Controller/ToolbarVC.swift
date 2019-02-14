@@ -110,6 +110,8 @@ class ToolbarVC: NSViewController {
                 self.modalBackgroundView.removeFromSuperview()
                 self.modalBackgroundView = nil
             }
+            self.modalView.removeFromSuperview()
+            self.modalView.alphaValue = 0.0
         })
     }
     
