@@ -34,6 +34,7 @@ class ToolbarVC: NSViewController {
     
     func setupView() {
         NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal(_:)), name: NOTIF_PRESENT_MODAL, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.notifCloseModal(_:)), name: NOTIF_CLOSE_MODAL, object: nil)
         view.wantsLayer = true
         view.layer?.backgroundColor = chatGreen.cgColor
         loginStackView.gestureRecognizers.removeAll()
@@ -79,7 +80,7 @@ class ToolbarVC: NSViewController {
             modalView.wantsLayer = true
             modalView.translatesAutoresizingMaskIntoConstraints = false
             modalView.alphaValue = 0.0
-            modalBackgroundView.addSubview(modalView)
+            view.addSubview(modalView)
             
             let horizontalConstraint = modalView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             let verticalConstraint = modalView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
@@ -96,23 +97,37 @@ class ToolbarVC: NSViewController {
         }, completionHandler: nil)
     }
     
+    @objc func notifCloseModal(_ notif: Notification) {
+        if let removeImmediately = notif.userInfo?[USER_INFO_CLOSE_IMMEDIATELY] as? Bool {
+            closeModal(removeImmediately)
+        } else {
+            closeModal()
+        }
+    }
+    
     @objc func closeModalClick(_ recognizer: NSClickGestureRecognizer) {
         closeModal()
     }
     
-    func closeModal() {
-        NSAnimationContext.runAnimationGroup({ (context) in
-            context.duration = 0.5
-            self.modalBackgroundView.animator().alphaValue = 0.0
-            self.view.layoutSubtreeIfNeeded()
-        }, completionHandler: {
-            if self.modalBackgroundView != nil {
-                self.modalBackgroundView.removeFromSuperview()
-                self.modalBackgroundView = nil
-            }
+    func closeModal(_ removeImmediately: Bool = false) {
+        if removeImmediately {
             self.modalView.removeFromSuperview()
-            self.modalView.alphaValue = 0.0
-        })
+        } else {
+            NSAnimationContext.runAnimationGroup({ (context) in
+                context.duration = 0.5
+                self.modalBackgroundView.animator().alphaValue = 0.0
+                self.view.layoutSubtreeIfNeeded()
+            }, completionHandler: {
+                if self.modalBackgroundView != nil {
+                    self.modalBackgroundView.removeFromSuperview()
+                    self.modalBackgroundView = nil
+                }
+                self.modalView.removeFromSuperview()
+                self.modalView.alphaValue = 0.0
+            })
+        }
+    
     }
+    
     
 }

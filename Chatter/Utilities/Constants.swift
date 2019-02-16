@@ -18,4 +18,6 @@ let AVENIR_BOLD = "AvenirNext-Bold"
 
 // Notifications
 let USER_INFO_MODAL = "userInfoModal"
+let USER_INFO_CLOSE_IMMEDIATELY = "closeImmediately"
 let NOTIF_PRESENT_MODAL = Notification.Name("presentModal")
+let NOTIF_CLOSE_MODAL = Notification.Name("closeModal")
