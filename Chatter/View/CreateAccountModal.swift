@@ -12,6 +12,15 @@ class CreateAccountModal: NSView {
 
     // Outlets
     @IBOutlet weak var view : NSView!
+    @IBOutlet weak var nameTextField: NSTextField!
+    @IBOutlet weak var emailTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSSecureTextField!
+    @IBOutlet weak var createAccountButton: NSButton!
+    @IBOutlet weak var chooseImageButton: NSButton!
+    @IBOutlet weak var profileImage: NSImageView!
+    @IBOutlet weak var progressSpinner: NSProgressIndicator!
+    @IBOutlet weak var stackView: NSStackView!
+    
     
     
     override init(frame frameRect: NSRect) {
@@ -33,6 +42,32 @@ class CreateAccountModal: NSView {
         self.view.frame = NSRect(x: 0, y: 0, width: 475, height: 300)
         view.layer?.backgroundColor = CGColor.white
         view.layer?.cornerRadius = 7
+        
+        profileImage.layer?.cornerRadius = 10
+        profileImage.layer?.borderColor = NSColor.gray.cgColor
+        profileImage.layer?.borderWidth = 3
+        
+        createAccountButton.layer?.backgroundColor = chatGreen.cgColor
+        createAccountButton.layer?.cornerRadius = 7
+        chooseImageButton.layer?.backgroundColor = chatGreen.cgColor
+        chooseImageButton.layer?.cornerRadius = 7
+        
+        createAccountButton.styleButtonText(button: createAccountButton, buttonName: "Create Account", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 13.0)
+        chooseImageButton.styleButtonText(button: chooseImageButton, buttonName: "Choose Avatar", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 13.0)
+        
+        nameTextField.focusRingType = .none
+        emailTextField.focusRingType = .none
+        passwordTextField.focusRingType = .none
+    }
+    
+    @IBAction func closeModalClicked(_ sender: Any) {
+        NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
+    }
+    
+    @IBAction func createAccountButtonClicked(_ sender: Any) {
+    }
+    
+    @IBAction func chooseImageButtonClicked(_ sender: Any) {
     }
     
 }
