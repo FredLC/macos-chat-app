@@ -61,6 +61,9 @@
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="nextKeyView" destination="2f9-6Y-Vh5" id="yoE-RJ-5A8"/>
+                                                            </connections>
                                                         </textField>
                                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ih6-XC-cCp">
                                                             <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
@@ -92,6 +95,9 @@
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="nextKeyView" destination="5I3-tt-KxY" id="M5L-8G-Uim"/>
+                                                            </connections>
                                                         </textField>
                                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Tx1-2B-bqm">
                                                             <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
@@ -123,6 +129,9 @@
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <outlet property="nextKeyView" destination="Dvj-3A-dkD" id="gai-j6-fOJ"/>
+                                                            </connections>
                                                         </textField>
                                                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-FU-w00">
                                                             <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
