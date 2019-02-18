@@ -17,10 +17,12 @@
 		481A4B422213886600EE1C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481A4B412213886600EE1C77 /* Constants.swift */; };
 		48248AAB221A1CE70078F0AE /* CreateAccountModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48248AAA221A1CE70078F0AE /* CreateAccountModal.xib */; };
 		48248AAD221A1D040078F0AE /* CreateAccountModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48248AAC221A1D040078F0AE /* CreateAccountModal.swift */; };
+		4830A20B221B542500ABAEC0 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4830A20A221B542500ABAEC0 /* AuthService.swift */; };
 		48CD61902214F438009FAF57 /* LoginModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CD618F2214F438009FAF57 /* LoginModal.xib */; };
 		48CD61922214F454009FAF57 /* LoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CD61912214F454009FAF57 /* LoginModal.swift */; };
 		48F353552214D1BF0018E429 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F353542214D1BF0018E429 /* NSButton.swift */; };
 		48F353572214DD7D0018E429 /* ClickBlockingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F353562214DD7D0018E429 /* ClickBlockingView.swift */; };
+		7FB6E0D9EF199A0DE9C81D50 /* Pods_Chatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15DD32243B2E34789CA810B /* Pods_Chatter.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +39,14 @@
 		481A4B412213886600EE1C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		48248AAA221A1CE70078F0AE /* CreateAccountModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateAccountModal.xib; sourceTree = "<group>"; };
 		48248AAC221A1D040078F0AE /* CreateAccountModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountModal.swift; sourceTree = "<group>"; };
+		4830A20A221B542500ABAEC0 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		48CD618F2214F438009FAF57 /* LoginModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginModal.xib; sourceTree = "<group>"; };
 		48CD61912214F454009FAF57 /* LoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModal.swift; sourceTree = "<group>"; };
 		48F353542214D1BF0018E429 /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 		48F353562214DD7D0018E429 /* ClickBlockingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickBlockingView.swift; sourceTree = "<group>"; };
+		7A4CBE264BC21F5070BD53F0 /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
+		93D57DD8AFA5215766F1CCFF /* Pods-Chatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.debug.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.debug.xcconfig"; sourceTree = "<group>"; };
+		D15DD32243B2E34789CA810B /* Pods_Chatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FB6E0D9EF199A0DE9C81D50 /* Pods_Chatter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +66,8 @@
 			children = (
 				481A4B24221381F700EE1C77 /* Chatter */,
 				481A4B23221381F700EE1C77 /* Products */,
+				7FF4535E8171F465A691801E /* Pods */,
+				CD1E21D23ADC3D55C8047E36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +82,7 @@
 		481A4B24221381F700EE1C77 /* Chatter */ = {
 			isa = PBXGroup;
 			children = (
+				4830A209221B541400ABAEC0 /* Services */,
 				48CD618E2214F422009FAF57 /* Xibs */,
 				481A4B372213862300EE1C77 /* Model */,
 				481A4B362213861E00EE1C77 /* View */,
@@ -124,6 +134,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		4830A209221B541400ABAEC0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4830A20A221B542500ABAEC0 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		48CD618E2214F422009FAF57 /* Xibs */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,23 @@
 			path = Xibs;
 			sourceTree = "<group>";
 		};
+		7FF4535E8171F465A691801E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93D57DD8AFA5215766F1CCFF /* Pods-Chatter.debug.xcconfig */,
+				7A4CBE264BC21F5070BD53F0 /* Pods-Chatter.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD1E21D23ADC3D55C8047E36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D15DD32243B2E34789CA810B /* Pods_Chatter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 481A4B32221381F800EE1C77 /* Build configuration list for PBXNativeTarget "Chatter" */;
 			buildPhases = (
+				7CE4D797807FC8241B19B20E /* [CP] Check Pods Manifest.lock */,
 				481A4B1E221381F700EE1C77 /* Sources */,
 				481A4B1F221381F700EE1C77 /* Frameworks */,
 				481A4B20221381F700EE1C77 /* Resources */,
+				C42C891FCAAFDFE26DF85DAA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +237,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7CE4D797807FC8241B19B20E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chatter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C42C891FCAAFDFE26DF85DAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chatter/Pods-Chatter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		481A4B1E221381F700EE1C77 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,6 +300,7 @@
 				481A4B392213863900EE1C77 /* ToolbarVC.swift in Sources */,
 				481A4B3B2213864800EE1C77 /* ChannelVC.swift in Sources */,
 				481A4B26221381F700EE1C77 /* AppDelegate.swift in Sources */,
+				4830A20B221B542500ABAEC0 /* AuthService.swift in Sources */,
 				48F353572214DD7D0018E429 /* ClickBlockingView.swift in Sources */,
 				481A4B3F221387A200EE1C77 /* MainWindowController.swift in Sources */,
 				481A4B422213886600EE1C77 /* Constants.swift in Sources */,
@@ -349,6 +440,7 @@
 		};
 		481A4B33221381F800EE1C77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93D57DD8AFA5215766F1CCFF /* Pods-Chatter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chatter/Chatter.entitlements;
@@ -368,6 +460,7 @@
 		};
 		481A4B34221381F800EE1C77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A4CBE264BC21F5070BD53F0 /* Pods-Chatter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chatter/Chatter.entitlements;

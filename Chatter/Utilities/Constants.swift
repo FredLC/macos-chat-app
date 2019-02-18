@@ -8,6 +8,13 @@
 
 import Cocoa
 
+typealias CompletionHandler = (_ Success: Bool) -> ()
+
+// URLS
+let BASE_URL = "https://polar-peak-62345.herokuapp.com/v1/"
+let REGISTER_URL = "\(BASE_URL)account/register"
+let LOGIN_URL = "\(BASE_URL)account/login"
+
 // Colors
 let chatPurple = NSColor(calibratedRed: 0.30, green: 0.22, blue: 0.29, alpha: 1.00)
 let chatGreen = NSColor(calibratedRed: 0.22, green: 0.66, blue: 0.68, alpha: 1.00)
@@ -21,3 +28,8 @@ let USER_INFO_MODAL = "userInfoModal"
 let USER_INFO_CLOSE_IMMEDIATELY = "closeImmediately"
 let NOTIF_PRESENT_MODAL = Notification.Name("presentModal")
 let NOTIF_CLOSE_MODAL = Notification.Name("closeModal")
+
+// User Defaults
+let TOKEN_KEY = "token"
+let LOGGED_IN_KEY = "loggedIn"
+let USER_EMAIL = "userEmail"
