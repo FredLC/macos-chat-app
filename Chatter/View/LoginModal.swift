@@ -51,9 +51,13 @@ class LoginModal: NSView {
     @IBAction func signInButtonClicked(_ sender: Any) {
         AuthService.instance.loginUser(email: emailTextField.stringValue, password: passwordTextField.stringValue) { (success) in
             if success {
-                NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
-                Swift.print(AuthService.instance.authToken)
-                Swift.print(AuthService.instance.userEmail)
+                AuthService.instance.findUserByEmail(completion: { (success) in
+                    if success {
+                        NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
+                        Swift.print(UserDataService.instance.name)
+                        Swift.print(UserDataService.instance.avatarName)
+                    }
+                })
             }
         }
     }
