@@ -21,6 +21,7 @@ class ChannelVC: NSViewController {
     
     override func viewWillAppear() {
         setupView()
+        NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
     func setupView() {
@@ -28,6 +29,16 @@ class ChannelVC: NSViewController {
         view.layer?.backgroundColor = chatPurple.cgColor
         addChannelButton.styleButtonText(button: addChannelButton, buttonName: "Add +", fontColor: .controlColor, alignment: .center, font: AVENIR_REGULAR, size: 13.0)
     }
+    
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+            usernameLabel.stringValue = UserDataService.instance.name
+        } else {
+            usernameLabel.stringValue = ""
+        }
+    }
+    
+    
     @IBAction func addChannelButtonClicked(_ sender: Any) {
         
     }

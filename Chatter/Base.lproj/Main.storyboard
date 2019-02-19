@@ -798,8 +798,8 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="by5-6j-pe2">
-                                <rect key="frame" x="76" y="269" width="49" height="23"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="freddyz" id="bdh-Yt-AeD">
+                                <rect key="frame" x="98" y="269" width="4" height="23"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="bdh-Yt-AeD">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

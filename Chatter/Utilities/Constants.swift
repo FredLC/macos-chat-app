@@ -30,6 +30,7 @@ let USER_INFO_MODAL = "userInfoModal"
 let USER_INFO_CLOSE_IMMEDIATELY = "closeImmediately"
 let NOTIF_PRESENT_MODAL = Notification.Name("presentModal")
 let NOTIF_CLOSE_MODAL = Notification.Name("closeModal")
+let NOTIF_USER_DATA_DID_CHANGE = Notification.Name("userDataChanged")
 
 // User Defaults
 let TOKEN_KEY = "token"

@@ -31,6 +31,7 @@ class ToolbarVC: NSViewController {
     
     override func viewWillAppear() {
         setupView()
+        NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
     func setupView() {
@@ -132,6 +133,23 @@ class ToolbarVC: NSViewController {
             })
         }
         
+    }
+    
+    @objc func userDataDidChange(_ notif: Notification) {
+        if AuthService.instance.isLoggedIn {
+            loginLabel.stringValue = UserDataService.instance.name
+            loginImage.wantsLayer = true
+            loginImage.layer?.cornerRadius = 5
+            loginImage.layer?.borderColor = NSColor.white.cgColor
+            loginImage.layer?.borderWidth = 1
+            loginImage.image = NSImage(named: UserDataService.instance.avatarName)
+        } else {
+            loginLabel.stringValue = "Login"
+            loginImage.wantsLayer = true
+            loginImage.layer?.borderWidth = 0
+            loginImage.image = NSImage(named: "profileDefault")
+            loginImage.layer?.backgroundColor = NSColor.clear.cgColor
+        }
     }
     
     

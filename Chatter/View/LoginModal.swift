@@ -54,8 +54,7 @@ class LoginModal: NSView {
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
                         NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
-                        Swift.print(UserDataService.instance.name)
-                        Swift.print(UserDataService.instance.avatarName)
+                        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                     }
                 })
             }
