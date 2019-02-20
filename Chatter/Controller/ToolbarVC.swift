@@ -32,12 +32,17 @@ class ToolbarVC: NSViewController {
     
     override func viewWillAppear() {
         setupView()
-        NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+        if AuthService.instance.isLoggedIn {
+            AuthService.instance.findUserByEmail { (success) in
+                NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+            }
+        }
     }
     
     func setupView() {
         NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.presentModal(_:)), name: NOTIF_PRESENT_MODAL, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.notifCloseModal(_:)), name: NOTIF_CLOSE_MODAL, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ToolbarVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
         view.wantsLayer = true
         view.layer?.backgroundColor = chatGreen.cgColor
         loginStackView.gestureRecognizers.removeAll()

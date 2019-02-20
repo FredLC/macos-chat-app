@@ -47,8 +47,12 @@ class ProfileModal: NSView {
     }
     
     @IBAction func closeModalClicked(_ sender: Any) {
+        NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
     }
     
     @IBAction func logoutButtonClicked(_ sender: Any) {
+        UserDataService.instance.logoutUser()
+        NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
+        NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
 }

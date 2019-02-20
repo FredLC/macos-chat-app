@@ -12,10 +12,12 @@ class LoginModal: NSView {
     
     // Outlets
     @IBOutlet weak var view : NSView!
+    @IBOutlet weak var stackview: NSStackView!
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var signInButton: NSButton!
     @IBOutlet weak var createAccountButton: NSButton!
+    @IBOutlet weak var progressSpinner: NSProgressIndicator!
     
     
     override init(frame frameRect: NSRect) {
@@ -48,11 +50,21 @@ class LoginModal: NSView {
         NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
     }
     
+    @IBAction func passwordSent(_ sender: Any) {
+        signInButton.performClick(nil)
+    }
+    
     @IBAction func signInButtonClicked(_ sender: Any) {
+        progressSpinner.isHidden = false
+        progressSpinner.startAnimation(nil)
+        stackview.alphaValue = 0.4
+        signInButton.isEnabled = false
         AuthService.instance.loginUser(email: emailTextField.stringValue, password: passwordTextField.stringValue) { (success) in
             if success {
                 AuthService.instance.findUserByEmail(completion: { (success) in
                     if success {
+                        self.progressSpinner.stopAnimation(nil)
+                        self.progressSpinner.isHidden = true
                         NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
                         NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                     }

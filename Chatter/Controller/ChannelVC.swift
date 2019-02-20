@@ -40,7 +40,12 @@ class ChannelVC: NSViewController {
     
     
     @IBAction func addChannelButtonClicked(_ sender: Any) {
-        
+        if AuthService.instance.isLoggedIn {
+            // add channel
+        } else {
+            let loginDict: [String : ModalType] = [USER_INFO_MODAL : ModalType.login]
+            NotificationCenter.default.post(name: NOTIF_PRESENT_MODAL, object: nil, userInfo: loginDict)
+        }
     }
     
 }

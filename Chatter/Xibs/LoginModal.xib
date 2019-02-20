@@ -10,7 +10,9 @@
                 <outlet property="createAccountButton" destination="6Ga-fv-sO2" id="OqT-Ie-Qpr"/>
                 <outlet property="emailTextField" destination="LcW-g1-QWt" id="4v2-ZG-YJe"/>
                 <outlet property="passwordTextField" destination="xsJ-HB-dRo" id="HXp-0x-edy"/>
+                <outlet property="progressSpinner" destination="ERQ-gT-bgL" id="Npx-wL-emU"/>
                 <outlet property="signInButton" destination="YeF-Ek-vJv" id="w9t-YB-Pl2"/>
+                <outlet property="stackview" destination="AnV-Eg-GcL" id="Ok5-m3-aSx"/>
                 <outlet property="view" destination="c22-O7-iKe" id="MCZ-yy-YHd"/>
             </connections>
         </customObject>
@@ -74,7 +76,7 @@
                                         <constraint firstAttribute="height" constant="30" id="kOq-pe-iUG"/>
                                         <constraint firstAttribute="width" constant="200" id="qDf-2Y-BEg"/>
                                     </constraints>
-                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Password" usesSingleLineMode="YES" id="xD5-b0-g2s">
+                                    <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" focusRingType="none" placeholderString="Password" usesSingleLineMode="YES" id="xD5-b0-g2s">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -83,6 +85,7 @@
                                         </allowedInputSourceLocales>
                                     </secureTextFieldCell>
                                     <connections>
+                                        <action selector="passwordSent:" target="-2" id="s5K-ql-RWj"/>
                                         <outlet property="nextKeyView" destination="LcW-g1-QWt" id="RMb-J9-cOC"/>
                                     </connections>
                                 </secureTextField>
@@ -154,11 +157,16 @@
                         <action selector="closeModalClicked:" target="-2" id="Bf3-vF-EE0"/>
                     </connections>
                 </button>
+                <progressIndicator hidden="YES" wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="ERQ-gT-bgL">
+                    <rect key="frame" x="222" y="134" width="32" height="32"/>
+                </progressIndicator>
             </subviews>
             <constraints>
                 <constraint firstItem="AnV-Eg-GcL" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="81a-UB-qB2"/>
                 <constraint firstItem="q45-a4-YsX" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="6" id="MJP-ui-6dj"/>
                 <constraint firstAttribute="trailing" secondItem="q45-a4-YsX" secondAttribute="trailing" constant="6" id="Zh2-ap-nlP"/>
+                <constraint firstItem="ERQ-gT-bgL" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="amq-DB-LbP"/>
+                <constraint firstItem="ERQ-gT-bgL" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="bGB-Nw-FVS"/>
                 <constraint firstAttribute="bottom" secondItem="6Ga-fv-sO2" secondAttribute="bottom" constant="20" id="h9D-HN-QOz"/>
                 <constraint firstItem="AnV-Eg-GcL" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="rMO-p1-HB0"/>
                 <constraint firstItem="6Ga-fv-sO2" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="vn5-QF-quE"/>

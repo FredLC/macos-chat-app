@@ -65,11 +65,15 @@ class CreateAccountModal: NSView {
     }
     
     @IBAction func createAccountButtonClicked(_ sender: Any) {
+        progressSpinner.isHidden = false
+        progressSpinner.startAnimation(nil)
         AuthService.instance.registerUser(email: emailTextField.stringValue, password: passwordTextField.stringValue) { (success) in
             if success {
                 AuthService.instance.loginUser(email: self.emailTextField.stringValue, password: self.passwordTextField.stringValue, completion: { (success) in
                     if success {
                         AuthService.instance.createUser(name: self.nameTextField.stringValue, email: self.emailTextField.stringValue, avatarColor: "", avatarName: "dark5", completion: { (success) in
+                            self.progressSpinner.stopAnimation(nil)
+                            self.progressSpinner.isHidden = true
                             NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
                         })
                     }
