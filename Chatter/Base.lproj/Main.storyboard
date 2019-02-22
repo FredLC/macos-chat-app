@@ -816,13 +816,13 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St3-35-UKj">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="32" horizontalPageScroll="10" verticalLineScroll="32" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="St3-35-UKj">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="221"/>
                                 <clipView key="contentView" id="7YK-mh-hHc">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="221"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="MIf-r2-KYq">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="30" rowSizeStyle="automatic" viewBased="YES" id="MIf-r2-KYq">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="221"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -842,21 +842,25 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="vgw-th-qjn">
-                                                            <rect key="frame" x="1" y="1" width="197" height="17"/>
+                                                        <tableCellView identifier="channelCell" id="vgw-th-qjn" customClass="ChannelCell" customModule="Chatter" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="197" height="30"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znl-rV-nWZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="197" height="17"/>
-                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="qtF-Dn-Vx1">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="znl-rV-nWZ" userLabel="channel name">
+                                                                    <rect key="frame" x="10" y="4" width="59" height="23"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="#channel" id="qtF-Dn-Vx1">
+                                                                        <font key="font" size="13" name="AvenirNext-Regular"/>
+                                                                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="znl-rV-nWZ" firstAttribute="leading" secondItem="vgw-th-qjn" secondAttribute="leading" constant="12" id="6Kg-uL-Y3m"/>
+                                                                <constraint firstItem="znl-rV-nWZ" firstAttribute="centerY" secondItem="vgw-th-qjn" secondAttribute="centerY" id="b9s-1t-V5F"/>
+                                                            </constraints>
                                                             <connections>
+                                                                <outlet property="channelName" destination="znl-rV-nWZ" id="oBJ-cF-cg4"/>
                                                                 <outlet property="textField" destination="znl-rV-nWZ" id="SA8-tZ-xEN"/>
                                                             </connections>
                                                         </tableCellView>
