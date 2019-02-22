@@ -43,6 +43,9 @@ class ProfileModal: NSView {
         profileImage.image = NSImage(named: UserDataService.instance.avatarName)
         profileImage.layer?.backgroundColor = UserDataService.instance.returnCGColor(components: UserDataService.instance.avatarColor)
         
+        usernameTextField.stringValue = UserDataService.instance.name
+        emailTextField.stringValue = UserDataService.instance.email
+        
         logoutButton.layer?.backgroundColor = chatGreen.cgColor
         logoutButton.layer?.cornerRadius = 7
         logoutButton.styleButtonText(button: logoutButton, buttonName: "Logout", fontColor: .white, alignment: .center, font: AVENIR_REGULAR, size: 13.0)
