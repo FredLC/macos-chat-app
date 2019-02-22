@@ -17,6 +17,7 @@ let REGISTER_URL = "\(BASE_URL)account/register"
 let LOGIN_URL = "\(BASE_URL)account/login"
 let ADD_USER_URL = "\(BASE_URL)user/add"
 let GET_USER_BY_EMAIL_URL = "\(BASE_URL)user/byEmail/"
+let GET_CHANNELS_URL = "\(BASE_URL)channel/"
 
 // Colors
 let chatPurple = NSColor(calibratedRed: 0.30, green: 0.22, blue: 0.29, alpha: 1.00)
