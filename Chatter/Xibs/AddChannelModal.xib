@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AddChannelModal" customModule="Chatter" customModuleProvider="target">
+            <connections>
+                <outlet property="channelDescriptionTextField" destination="ja5-7s-hG8" id="ipg-ZK-D1x"/>
+                <outlet property="channelNameTextField" destination="RaO-gx-Db0" id="sML-jG-pV8"/>
+                <outlet property="createChannelButton" destination="B1c-rT-X8O" id="Xl4-zN-uSP"/>
+                <outlet property="view" destination="c22-O7-iKe" id="yZL-Ih-lJY"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="475" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="25" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1L-bE-UWY">
+                    <rect key="frame" x="138" y="45" width="200" height="210"/>
+                    <subviews>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="865-dW-J2Y">
+                            <rect key="frame" x="35" y="177" width="130" height="33"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="Add Channel" id="ATp-Mw-6Nl">
+                                <font key="font" size="20" name="AvenirNext-Bold"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mGD-tp-cy1">
+                            <rect key="frame" x="0.0" y="121" width="200" height="31"/>
+                            <subviews>
+                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RaO-gx-Db0">
+                                    <rect key="frame" x="-2" y="1" width="204" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="0uo-9d-qxn"/>
+                                        <constraint firstAttribute="height" constant="30" id="aOZ-4z-FeC"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Channel Name" id="ajS-UB-mFD">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <outlet property="nextKeyView" destination="ja5-7s-hG8" id="iCi-nh-Yne"/>
+                                    </connections>
+                                </textField>
+                                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="6j1-ht-3kl">
+                                    <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Z3k-Uf-WMH"/>
+                                    </constraints>
+                                </box>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <stackView distribution="fill" orientation="vertical" alignment="centerX" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4K-JC-FV2">
+                            <rect key="frame" x="0.0" y="65" width="200" height="31"/>
+                            <subviews>
+                                <textField focusRingType="none" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ja5-7s-hG8">
+                                    <rect key="frame" x="-2" y="1" width="204" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="5AU-4Y-W7X"/>
+                                        <constraint firstAttribute="height" constant="30" id="Raa-tf-jRg"/>
+                                    </constraints>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" focusRingType="none" placeholderString="Channel Description" id="rSK-nX-cAB">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <action selector="descriptionSent:" target="-2" id="aQe-II-0TA"/>
+                                        <outlet property="nextKeyView" destination="RaO-gx-Db0" id="DUb-ZP-mI1"/>
+                                    </connections>
+                                </textField>
+                                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="kJ7-QA-f8b">
+                                    <rect key="frame" x="0.0" y="-2" width="200" height="5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="Vga-eJ-qGl"/>
+                                    </constraints>
+                                </box>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-rT-X8O">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Y6c-qd-DUx"/>
+                                <constraint firstAttribute="width" constant="200" id="hQJ-N4-VPN"/>
+                            </constraints>
+                            <buttonCell key="cell" type="bevel" title="Create Channel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="dCr-lp-t3U">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="createChannelButtonClicked:" target="-2" id="WWh-2o-hOg"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="52i-Uu-WPS">
+                    <rect key="frame" x="442" y="267" width="25" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="7Jx-hQ-utf"/>
+                        <constraint firstAttribute="width" constant="25" id="lch-nq-CO7"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="mac-loginClose" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="DPA-ea-p9D">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="closeModalClicked:" target="-2" id="2qm-zB-4lB"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="R1L-bE-UWY" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="K9x-e5-Jqc"/>
+                <constraint firstAttribute="trailing" secondItem="52i-Uu-WPS" secondAttribute="trailing" constant="8" id="UeJ-Q3-uT4"/>
+                <constraint firstItem="52i-Uu-WPS" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="8" id="ZqN-sA-Ugo"/>
+                <constraint firstItem="R1L-bE-UWY" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="eXc-7C-OtR"/>
+            </constraints>
+        </customView>
+    </objects>
+    <resources>
+        <image name="mac-loginClose" width="40" height="40"/>
+    </resources>
+</document>

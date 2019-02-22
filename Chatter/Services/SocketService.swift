@@ -36,6 +36,11 @@ class SocketService: NSObject {
         completion(true)
     }
     
+    func addChannel(channelName: String, channelDescription: String, completion: @escaping CompletionHandler) {
+        socket.emit("newChannel", channelName, channelDescription)
+        completion(true)
+    }
+    
     
     
 }
