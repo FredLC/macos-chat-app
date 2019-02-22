@@ -20,6 +20,7 @@ class CreateAccountModal: NSView, NSPopoverDelegate {
     @IBOutlet weak var profileImage: NSImageView!
     @IBOutlet weak var progressSpinner: NSProgressIndicator!
     @IBOutlet weak var stackView: NSStackView!
+    @IBOutlet weak var colorWell: NSColorWell!
     
     // Variables
     var avatarName = "profileDefault"
@@ -87,6 +88,7 @@ class CreateAccountModal: NSView, NSPopoverDelegate {
                             self.progressSpinner.stopAnimation(nil)
                             self.progressSpinner.isHidden = true
                             NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
+                            NotificationCenter.default.post(name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
                         })
                     }
                 })
@@ -100,4 +102,11 @@ class CreateAccountModal: NSView, NSPopoverDelegate {
         popover.behavior = .transient
     }
     
+    @IBAction func colorPicked(_ sender: Any) {
+        profileImage.layer?.backgroundColor = colorWell.color.cgColor
+        let color = colorWell.color.cgColor
+        guard let colorArray = color.components?.description else { return }
+        avatarColor = colorArray
+        print(colorArray)
+    }
 }

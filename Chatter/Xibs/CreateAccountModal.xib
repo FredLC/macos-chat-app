@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CreateAccountModal" customModule="Chatter" customModuleProvider="target">
             <connections>
                 <outlet property="chooseImageButton" destination="gD1-We-pEG" id="BcQ-X0-8Mp"/>
+                <outlet property="colorWell" destination="llW-EK-TAB" id="j6y-IG-aI7"/>
                 <outlet property="createAccountButton" destination="Qwz-id-t4A" id="myb-Z2-QJF"/>
                 <outlet property="emailTextField" destination="2f9-6Y-Vh5" id="TC9-VV-o2W"/>
                 <outlet property="nameTextField" destination="Dvj-3A-dkD" id="Me1-sp-IBk"/>
@@ -260,6 +261,9 @@
                         <constraint firstAttribute="height" constant="23" id="fvZ-TE-Svq"/>
                     </constraints>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="colorPicked:" target="-2" id="JQp-95-hT3"/>
+                    </connections>
                 </colorWell>
             </subviews>
             <constraints>

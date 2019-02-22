@@ -63,6 +63,36 @@ class UserDataService {
         }
     }
     
+    func returnCGColor(components: String) -> CGColor {
+        // [0.9623754620552063, 0.5031990081896194, 0.11460058069573613, 1.0]
+        let scanner = Scanner(string: components)
+        let skipped = CharacterSet(charactersIn: "[], ")
+        let comma = CharacterSet(charactersIn: ",")
+        scanner.charactersToBeSkipped = skipped
+        
+        var r, g, b, a : NSString?
+        
+        scanner.scanUpToCharacters(from: comma, into: &r)
+        scanner.scanUpToCharacters(from: comma, into: &g)
+        scanner.scanUpToCharacters(from: comma, into: &b)
+        scanner.scanUpToCharacters(from: comma, into: &a)
+        
+        let defaultColor = CGColor(red: 0.69, green: 0.85, blue: 0.99, alpha: 1.0)
+        
+        guard let rUnwrapped = r else { return defaultColor }
+        guard let gUnwrapped = g else { return defaultColor }
+        guard let bUnwrapped = b else { return defaultColor }
+        guard let aUnwrapped = a else { return defaultColor }
+        
+        let rFloat = CGFloat(rUnwrapped.doubleValue)
+        let gFloat = CGFloat(gUnwrapped.doubleValue)
+        let bFloat = CGFloat(bUnwrapped.doubleValue)
+        let aFloat = CGFloat(aUnwrapped.doubleValue)
+        
+        let newCGColor = CGColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
+        return newCGColor
+    }
+    
     func logoutUser() {
         _id = ""
         _name = ""

@@ -40,6 +40,8 @@ class ProfileModal: NSView {
         profileImage.layer?.cornerRadius = 10
         profileImage.layer?.borderColor = NSColor.gray.cgColor
         profileImage.layer?.borderWidth = 3
+        profileImage.image = NSImage(named: UserDataService.instance.avatarName)
+        profileImage.layer?.backgroundColor = UserDataService.instance.returnCGColor(components: UserDataService.instance.avatarColor)
         
         logoutButton.layer?.backgroundColor = chatGreen.cgColor
         logoutButton.layer?.cornerRadius = 7

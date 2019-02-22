@@ -164,6 +164,7 @@ class ToolbarVC: NSViewController {
             loginImage.layer?.borderColor = NSColor.white.cgColor
             loginImage.layer?.borderWidth = 1
             loginImage.image = NSImage(named: UserDataService.instance.avatarName)
+            loginImage.layer?.backgroundColor = UserDataService.instance.returnCGColor(components: UserDataService.instance.avatarColor)
         } else {
             loginLabel.stringValue = "Login"
             loginImage.wantsLayer = true
