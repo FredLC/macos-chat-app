@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class CreateAccountModal: NSView {
+class CreateAccountModal: NSView, NSPopoverDelegate {
 
     // Outlets
     @IBOutlet weak var view : NSView!
@@ -31,6 +31,7 @@ class CreateAccountModal: NSView {
         super.init(frame: frameRect)
         Bundle.main.loadNibNamed("CreateAccountModal", owner: self, topLevelObjects: nil)
         self.addSubview(self.view)
+        popover.delegate = self
     }
     
     required init?(coder decoder: NSCoder) {
@@ -64,6 +65,13 @@ class CreateAccountModal: NSView {
         passwordTextField.focusRingType = .none
     }
     
+    func popoverDidClose(_ notification: Notification) {
+        if UserDataService.instance.avatarName != "" {
+            profileImage.image = NSImage(named: UserDataService.instance.avatarName)
+            avatarName = UserDataService.instance.avatarName
+        }
+    }
+    
     @IBAction func closeModalClicked(_ sender: Any) {
         NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
     }
@@ -75,7 +83,7 @@ class CreateAccountModal: NSView {
             if success {
                 AuthService.instance.loginUser(email: self.emailTextField.stringValue, password: self.passwordTextField.stringValue, completion: { (success) in
                     if success {
-                        AuthService.instance.createUser(name: self.nameTextField.stringValue, email: self.emailTextField.stringValue, avatarColor: "", avatarName: "dark5", completion: { (success) in
+                        AuthService.instance.createUser(name: self.nameTextField.stringValue, email: self.emailTextField.stringValue, avatarColor: self.avatarColor, avatarName: self.avatarName, completion: { (success) in
                             self.progressSpinner.stopAnimation(nil)
                             self.progressSpinner.isHidden = true
                             NotificationCenter.default.post(name: NOTIF_CLOSE_MODAL, object: nil)
