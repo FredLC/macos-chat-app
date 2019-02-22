@@ -21,6 +21,10 @@ class CreateAccountModal: NSView {
     @IBOutlet weak var progressSpinner: NSProgressIndicator!
     @IBOutlet weak var stackView: NSStackView!
     
+    // Variables
+    var avatarName = "profileDefault"
+    var avatarColor = "[0.5, 0.5, 0.5, 1]"
+    let popover = NSPopover()
     
     
     override init(frame frameRect: NSRect) {
@@ -83,6 +87,9 @@ class CreateAccountModal: NSView {
     }
     
     @IBAction func chooseImageButtonClicked(_ sender: Any) {
+        popover.contentViewController = AvatarPickerVC(nibName: "AvatarPickerVC", bundle: nil)
+        popover.show(relativeTo: chooseImageButton.bounds, of: chooseImageButton, preferredEdge: .minX)
+        popover.behavior = .transient
     }
     
 }

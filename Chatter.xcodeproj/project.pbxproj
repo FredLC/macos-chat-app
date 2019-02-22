@@ -24,6 +24,10 @@
 		48CD61922214F454009FAF57 /* LoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CD61912214F454009FAF57 /* LoginModal.swift */; };
 		48D226EC22205ABD00732448 /* AddChannelModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D226EB22205ABD00732448 /* AddChannelModal.xib */; };
 		48D226EE22205AE900732448 /* AddChannelModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D226ED22205AE900732448 /* AddChannelModal.swift */; };
+		48D226F222206A0600732448 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D226F022206A0600732448 /* AvatarPickerVC.swift */; };
+		48D226F322206A0600732448 /* AvatarPickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D226F122206A0600732448 /* AvatarPickerVC.xib */; };
+		48D226F522206E4700732448 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D226F422206E4700732448 /* AnimalCell.swift */; };
+		48D226F722206E5800732448 /* AnimalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D226F622206E5800732448 /* AnimalCell.xib */; };
 		48DB7BBF221D94FC005F9C02 /* ProfileModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48DB7BBE221D94FC005F9C02 /* ProfileModal.xib */; };
 		48DB7BC1221D9524005F9C02 /* ProfileModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB7BC0221D9524005F9C02 /* ProfileModal.swift */; };
 		48F353552214D1BF0018E429 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F353542214D1BF0018E429 /* NSButton.swift */; };
@@ -52,6 +56,10 @@
 		48CD61912214F454009FAF57 /* LoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModal.swift; sourceTree = "<group>"; };
 		48D226EB22205ABD00732448 /* AddChannelModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelModal.xib; sourceTree = "<group>"; };
 		48D226ED22205AE900732448 /* AddChannelModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChannelModal.swift; sourceTree = "<group>"; };
+		48D226F022206A0600732448 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		48D226F122206A0600732448 /* AvatarPickerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarPickerVC.xib; sourceTree = "<group>"; };
+		48D226F422206E4700732448 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
+		48D226F622206E5800732448 /* AnimalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalCell.xib; sourceTree = "<group>"; };
 		48DB7BBE221D94FC005F9C02 /* ProfileModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileModal.xib; sourceTree = "<group>"; };
 		48DB7BC0221D9524005F9C02 /* ProfileModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModal.swift; sourceTree = "<group>"; };
 		48F353542214D1BF0018E429 /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
@@ -123,11 +131,13 @@
 		481A4B362213861E00EE1C77 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				48D226EF222069ED00732448 /* Popover */,
 				48F353562214DD7D0018E429 /* ClickBlockingView.swift */,
 				48CD61912214F454009FAF57 /* LoginModal.swift */,
 				48248AAC221A1D040078F0AE /* CreateAccountModal.swift */,
 				48DB7BC0221D9524005F9C02 /* ProfileModal.swift */,
 				48D226ED22205AE900732448 /* AddChannelModal.swift */,
+				48D226F422206E4700732448 /* AnimalCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -165,8 +175,18 @@
 				48248AAA221A1CE70078F0AE /* CreateAccountModal.xib */,
 				48DB7BBE221D94FC005F9C02 /* ProfileModal.xib */,
 				48D226EB22205ABD00732448 /* AddChannelModal.xib */,
+				48D226F622206E5800732448 /* AnimalCell.xib */,
 			);
 			path = Xibs;
+			sourceTree = "<group>";
+		};
+		48D226EF222069ED00732448 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				48D226F022206A0600732448 /* AvatarPickerVC.swift */,
+				48D226F122206A0600732448 /* AvatarPickerVC.xib */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 		7FF4535E8171F465A691801E /* Pods */ = {
@@ -247,7 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				481A4B2A221381F800EE1C77 /* Assets.xcassets in Resources */,
+				48D226F722206E5800732448 /* AnimalCell.xib in Resources */,
 				48248AAB221A1CE70078F0AE /* CreateAccountModal.xib in Resources */,
+				48D226F322206A0600732448 /* AvatarPickerVC.xib in Resources */,
 				481A4B2D221381F800EE1C77 /* Main.storyboard in Resources */,
 				48D226EC22205ABD00732448 /* AddChannelModal.xib in Resources */,
 				48CD61902214F438009FAF57 /* LoginModal.xib in Resources */,
@@ -320,6 +342,7 @@
 				481A4B3D2213865300EE1C77 /* ChatVC.swift in Sources */,
 				48248AAD221A1D040078F0AE /* CreateAccountModal.swift in Sources */,
 				481A4B392213863900EE1C77 /* ToolbarVC.swift in Sources */,
+				48D226F222206A0600732448 /* AvatarPickerVC.swift in Sources */,
 				48D226EE22205AE900732448 /* AddChannelModal.swift in Sources */,
 				481A4B3B2213864800EE1C77 /* ChannelVC.swift in Sources */,
 				481A4B26221381F700EE1C77 /* AppDelegate.swift in Sources */,
@@ -330,6 +353,7 @@
 				481A4B422213886600EE1C77 /* Constants.swift in Sources */,
 				48F353552214D1BF0018E429 /* NSButton.swift in Sources */,
 				48CD61922214F454009FAF57 /* LoginModal.swift in Sources */,
+				48D226F522206E4700732448 /* AnimalCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
