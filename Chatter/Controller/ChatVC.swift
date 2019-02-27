@@ -21,7 +21,7 @@ class ChatVC: NSViewController {
     
     // Variables
     let user = UserDataService.instance
-    
+    var channel: Channel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +44,15 @@ class ChatVC: NSViewController {
         
         sendButton.styleButtonText(button: sendButton, buttonName: "Send", fontColor: .darkGray, alignment: .center, font: AVENIR_BOLD, size: 13.0)
         
+    }
+    
+    func updateWithChannel(channel: Channel) {
+        usersTypingLabel.stringValue = ""
+        self.channel = channel
+        let channelName = channel.channelTitle ?? ""
+        let channelDesc = channel.channelDescription ?? ""
+        channelTitle.stringValue = channelName
+        channelDescription.stringValue = channelDesc
     }
     
     @objc func userDataDidChange(_ notif: Notification) {

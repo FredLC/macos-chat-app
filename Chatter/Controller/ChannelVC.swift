@@ -15,6 +15,11 @@ class ChannelVC: NSViewController {
     @IBOutlet weak var addChannelButton: NSButton!
     @IBOutlet weak var tableView: NSTableView!
     
+    // Variables
+    var selectedChannelIndex = 0
+    var selectedChannel: Channel?
+    var chatVC : ChatVC?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -24,6 +29,10 @@ class ChannelVC: NSViewController {
     override func viewWillAppear() {
         setupView()
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
+    }
+    
+    override func viewDidAppear() {
+        chatVC = self.view.window?.contentViewController?.children[0].children[1] as? ChatVC
     }
     
     func setupView() {
@@ -71,10 +80,18 @@ extension ChannelVC: NSTableViewDelegate, NSTableViewDataSource {
         let channel = MessageService.instance.channels[row]
         
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "channelCell"), owner: nil) as? ChannelCell {
-            cell.configureCell(channel: channel)
+            cell.configureCell(channel: channel, selectedChannel: selectedChannelIndex, row: row)
             return cell
         }
         return NSTableCellView()
+    }
+    
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        selectedChannelIndex = tableView.selectedRow
+        let channel = MessageService.instance.channels[selectedChannelIndex]
+        selectedChannel = channel
+        chatVC?.updateWithChannel(channel: channel)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {

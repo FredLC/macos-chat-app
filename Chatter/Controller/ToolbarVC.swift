@@ -136,13 +136,34 @@ class ToolbarVC: NSViewController {
         closeModal()
     }
     
+//    func closeModal(_ removeImmediately: Bool = false) {
+//        if removeImmediately {
+//            self.modalView.removeFromSuperview()
+//        } else {
+//            NSAnimationContext.runAnimationGroup({ (context) in
+//                context.duration = 0.5
+//                self.modalBackgroundView.animator().alphaValue = 0.0
+//                self.view.layoutSubtreeIfNeeded()
+//            }, completionHandler: {
+//                if self.modalBackgroundView != nil {
+//                    self.modalBackgroundView.removeFromSuperview()
+//                    self.modalBackgroundView = nil
+//                }
+//                self.modalView.removeFromSuperview()
+//                self.modalView.alphaValue = 0.0
+//            })
+//        }
+//
+//    }
+    
     func closeModal(_ removeImmediately: Bool = false) {
         if removeImmediately {
             self.modalView.removeFromSuperview()
         } else {
             NSAnimationContext.runAnimationGroup({ (context) in
                 context.duration = 0.5
-                self.modalBackgroundView.animator().alphaValue = 0.0
+                modalBackgroundView.animator().alphaValue = 0.0
+                modalView.animator().alphaValue = 0.0
                 self.view.layoutSubtreeIfNeeded()
             }, completionHandler: {
                 if self.modalBackgroundView != nil {
@@ -150,10 +171,8 @@ class ToolbarVC: NSViewController {
                     self.modalBackgroundView = nil
                 }
                 self.modalView.removeFromSuperview()
-                self.modalView.alphaValue = 0.0
             })
         }
-        
     }
     
     @objc func userDataDidChange(_ notif: Notification) {

@@ -12,9 +12,22 @@ class ChannelCell: NSTableCellView {
 
     @IBOutlet weak var channelName: NSTextField!
     
-    func configureCell(channel: Channel) {
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
+    }
+    
+    func configureCell(channel: Channel, selectedChannel: Int, row: Int) {
         let title = channel.channelTitle ?? ""
         channelName.stringValue = "#\(title)"
+        
+        wantsLayer = true
+        if row == selectedChannel {
+            layer?.backgroundColor = chatGreen.cgColor
+            channelName.textColor = NSColor.white
+        } else {
+            layer?.backgroundColor = CGColor.clear
+            channelName.textColor = NSColor.controlColor
+        }
     }
     
 }
