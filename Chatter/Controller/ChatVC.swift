@@ -53,6 +53,18 @@ class ChatVC: NSViewController {
         let channelDesc = channel.channelDescription ?? ""
         channelTitle.stringValue = channelName
         channelDescription.stringValue = channelDesc
+        getChats()
+    }
+    
+    func getChats() {
+        guard let channelId = channel?.id else { return }
+        MessageService.instance.findAllMessagesForChannel(channelId: channelId) { (success) in
+            if success {
+                for message in MessageService.instance.messages {
+                    print(message.message)
+                }
+            }
+        }
     }
     
     @objc func userDataDidChange(_ notif: Notification) {
@@ -67,7 +79,7 @@ class ChatVC: NSViewController {
     
     @IBAction func sendButtonClicked(_ sender: Any) {
         if AuthService.instance.isLoggedIn {
-            let channelId = "592cd40e39179c0023f3531f"
+            guard let channelId = channel?.id else { return }
             SocketService.instance.addMessage(messageBody: messageTextField.stringValue, userId: user.id, channelId: channelId) { (success) in
                 if success {
                     self.messageTextField.stringValue = ""

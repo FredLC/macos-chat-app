@@ -23,6 +23,7 @@
 		48ACCC1F22209EA200A2C6B2 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACCC1E22209EA200A2C6B2 /* Channel.swift */; };
 		48ACCC2122209F1C00A2C6B2 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACCC2022209F1C00A2C6B2 /* MessageService.swift */; };
 		48ACCC232220A90E00A2C6B2 /* ChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48ACCC222220A90E00A2C6B2 /* ChannelCell.swift */; };
+		48BD93742226DEE700E5F804 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BD93732226DEE700E5F804 /* Message.swift */; };
 		48CD61902214F438009FAF57 /* LoginModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48CD618F2214F438009FAF57 /* LoginModal.xib */; };
 		48CD61922214F454009FAF57 /* LoginModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CD61912214F454009FAF57 /* LoginModal.swift */; };
 		48D226EC22205ABD00732448 /* AddChannelModal.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D226EB22205ABD00732448 /* AddChannelModal.xib */; };
@@ -58,6 +59,7 @@
 		48ACCC1E22209EA200A2C6B2 /* Channel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		48ACCC2022209F1C00A2C6B2 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
 		48ACCC222220A90E00A2C6B2 /* ChannelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCell.swift; sourceTree = "<group>"; };
+		48BD93732226DEE700E5F804 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		48CD618F2214F438009FAF57 /* LoginModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginModal.xib; sourceTree = "<group>"; };
 		48CD61912214F454009FAF57 /* LoginModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModal.swift; sourceTree = "<group>"; };
 		48D226EB22205ABD00732448 /* AddChannelModal.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddChannelModal.xib; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				48ACCC1E22209EA200A2C6B2 /* Channel.swift */,
+				48BD93732226DEE700E5F804 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				481A4B3D2213865300EE1C77 /* ChatVC.swift in Sources */,
 				48248AAD221A1D040078F0AE /* CreateAccountModal.swift in Sources */,
 				481A4B392213863900EE1C77 /* ToolbarVC.swift in Sources */,
+				48BD93742226DEE700E5F804 /* Message.swift in Sources */,
 				48D226F222206A0600732448 /* AvatarPickerVC.swift in Sources */,
 				48D226EE22205AE900732448 /* AddChannelModal.swift in Sources */,
 				48ACCC1F22209EA200A2C6B2 /* Channel.swift in Sources */,
