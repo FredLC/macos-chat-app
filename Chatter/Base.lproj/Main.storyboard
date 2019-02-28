@@ -943,13 +943,13 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPz-Cn-K7a">
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="102" horizontalPageScroll="10" verticalLineScroll="102" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPz-Cn-K7a">
                                 <rect key="frame" x="0.0" y="157" width="450" height="175"/>
                                 <clipView key="contentView" id="ZKM-Yk-ClR">
                                     <rect key="frame" x="0.0" y="0.0" width="450" height="175"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" id="Kg4-KU-l4x">
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="100" rowSizeStyle="automatic" viewBased="YES" id="Kg4-KU-l4x">
                                             <rect key="frame" x="0.0" y="0.0" width="450" height="175"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
@@ -969,22 +969,72 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="L5W-dc-bEo">
-                                                            <rect key="frame" x="1" y="1" width="447" height="17"/>
+                                                        <tableCellView identifier="chatCell" id="L5W-dc-bEo" userLabel="chat cell" customClass="ChatCell" customModule="Chatter" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="447" height="100"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uO2-4u-lar">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="447" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="83" width="447" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="vXh-ei-aA5">
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" id="vXh-ei-aA5">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                     </textFieldCell>
                                                                 </textField>
+                                                                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="npz-oJ-zEi">
+                                                                    <rect key="frame" x="10" y="40" width="50" height="50"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="50" id="01v-NQ-gzT"/>
+                                                                        <constraint firstAttribute="height" constant="50" id="Vve-9K-3xc"/>
+                                                                    </constraints>
+                                                                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="dark10" id="zQT-Ga-yAx"/>
+                                                                </imageView>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fuy-ma-Br6">
+                                                                    <rect key="frame" x="68" y="67" width="53" height="23"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="freddyz" id="wNi-H1-MDP">
+                                                                        <font key="font" size="13" name="AvenirNext-Bold"/>
+                                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rcu-bP-EJC">
+                                                                    <rect key="frame" x="125" y="67" width="124" height="23"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="clipping" title="February 28th, 2019" id="oAU-RN-3bV">
+                                                                        <font key="font" size="13" name="AvenirNext-Regular"/>
+                                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="qUL-9y-sA2">
+                                                                    <rect key="frame" x="68" y="2" width="371" height="55"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="55" id="XlR-0U-El0"/>
+                                                                    </constraints>
+                                                                    <textFieldCell key="cell" selectable="YES" title="Multiline Label" id="VUN-MD-tTK">
+                                                                        <font key="font" size="13" name="AvenirNext-Regular"/>
+                                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="npz-oJ-zEi" firstAttribute="leading" secondItem="L5W-dc-bEo" secondAttribute="leading" constant="10" id="1Qq-gX-DBx"/>
+                                                                <constraint firstItem="qUL-9y-sA2" firstAttribute="top" secondItem="fuy-ma-Br6" secondAttribute="bottom" constant="10" id="8w6-pe-olv"/>
+                                                                <constraint firstItem="qUL-9y-sA2" firstAttribute="leading" secondItem="npz-oJ-zEi" secondAttribute="trailing" constant="10" id="Kob-wZ-XgX"/>
+                                                                <constraint firstItem="fuy-ma-Br6" firstAttribute="leading" secondItem="npz-oJ-zEi" secondAttribute="trailing" constant="10" id="STE-H9-fAx"/>
+                                                                <constraint firstAttribute="trailing" secondItem="qUL-9y-sA2" secondAttribute="trailing" constant="10" id="anh-kR-x1n"/>
+                                                                <constraint firstItem="rcu-bP-EJC" firstAttribute="centerY" secondItem="fuy-ma-Br6" secondAttribute="centerY" id="c7z-aD-5gC"/>
+                                                                <constraint firstItem="rcu-bP-EJC" firstAttribute="leading" secondItem="fuy-ma-Br6" secondAttribute="trailing" constant="8" id="i7t-MU-1G0"/>
+                                                                <constraint firstItem="npz-oJ-zEi" firstAttribute="top" secondItem="L5W-dc-bEo" secondAttribute="top" constant="10" id="otG-Hz-Fat"/>
+                                                                <constraint firstItem="fuy-ma-Br6" firstAttribute="top" secondItem="L5W-dc-bEo" secondAttribute="top" constant="10" id="xCC-vb-xmm"/>
+                                                            </constraints>
                                                             <connections>
+                                                                <outlet property="messageBodyLabel" destination="qUL-9y-sA2" id="7yE-UW-gme"/>
+                                                                <outlet property="profileImage" destination="npz-oJ-zEi" id="YTs-pM-WZN"/>
                                                                 <outlet property="textField" destination="uO2-4u-lar" id="Rbn-ru-bs9"/>
+                                                                <outlet property="timestampLabel" destination="rcu-bP-EJC" id="KhV-gc-KDT"/>
+                                                                <outlet property="usernameLabel" destination="fuy-ma-Br6" id="MLG-r6-QCO"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
@@ -1075,6 +1125,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dark10" width="100" height="100"/>
         <image name="profileDefault" width="100" height="100"/>
     </resources>
 </document>

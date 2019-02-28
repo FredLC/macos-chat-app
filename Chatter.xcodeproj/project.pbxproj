@@ -36,6 +36,7 @@
 		48DB7BC1221D9524005F9C02 /* ProfileModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DB7BC0221D9524005F9C02 /* ProfileModal.swift */; };
 		48F353552214D1BF0018E429 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F353542214D1BF0018E429 /* NSButton.swift */; };
 		48F353572214DD7D0018E429 /* ClickBlockingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F353562214DD7D0018E429 /* ClickBlockingView.swift */; };
+		48FC2C4C222838DF00A2149F /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FC2C4B222838DF00A2149F /* ChatCell.swift */; };
 		7FB6E0D9EF199A0DE9C81D50 /* Pods_Chatter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15DD32243B2E34789CA810B /* Pods_Chatter.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		48DB7BC0221D9524005F9C02 /* ProfileModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModal.swift; sourceTree = "<group>"; };
 		48F353542214D1BF0018E429 /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 		48F353562214DD7D0018E429 /* ClickBlockingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickBlockingView.swift; sourceTree = "<group>"; };
+		48FC2C4B222838DF00A2149F /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		7A4CBE264BC21F5070BD53F0 /* Pods-Chatter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.release.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.release.xcconfig"; sourceTree = "<group>"; };
 		93D57DD8AFA5215766F1CCFF /* Pods-Chatter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chatter.debug.xcconfig"; path = "Target Support Files/Pods-Chatter/Pods-Chatter.debug.xcconfig"; sourceTree = "<group>"; };
 		D15DD32243B2E34789CA810B /* Pods_Chatter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chatter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				48D226ED22205AE900732448 /* AddChannelModal.swift */,
 				48D226F422206E4700732448 /* AnimalCell.swift */,
 				48ACCC222220A90E00A2C6B2 /* ChannelCell.swift */,
+				48FC2C4B222838DF00A2149F /* ChatCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				48ACCC232220A90E00A2C6B2 /* ChannelCell.swift in Sources */,
 				481A4B3B2213864800EE1C77 /* ChannelVC.swift in Sources */,
 				481A4B26221381F700EE1C77 /* AppDelegate.swift in Sources */,
+				48FC2C4C222838DF00A2149F /* ChatCell.swift in Sources */,
 				4830A20B221B542500ABAEC0 /* AuthService.swift in Sources */,
 				4830A20D221B631300ABAEC0 /* UserDataService.swift in Sources */,
 				48F353572214DD7D0018E429 /* ClickBlockingView.swift in Sources */,
