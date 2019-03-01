@@ -47,6 +47,7 @@ class ChannelVC: NSViewController {
             getChannels()
         } else {
             usernameLabel.stringValue = ""
+            tableView.reloadData()
         }
     }
     

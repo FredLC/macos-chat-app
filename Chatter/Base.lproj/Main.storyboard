@@ -928,16 +928,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eFB-Uf-cYY">
-                                <rect key="frame" x="8" y="340" width="77" height="31"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="#general" id="SK8-0k-VPK">
+                                <rect key="frame" x="8" y="340" width="113" height="31"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Please Log In" id="SK8-0k-VPK">
                                     <font key="font" size="18" name="AvenirNext-Regular"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rlJ-Ql-pHI">
-                                <rect key="frame" x="91" y="344" width="141" height="23"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="This is where we chatss" id="2fJ-61-Ej5">
+                                <rect key="frame" x="127" y="344" width="4" height="23"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="2fJ-61-Ej5">
                                     <font key="font" size="13" name="AvenirNext-Regular"/>
                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1067,7 +1067,7 @@
                                         <rect key="frame" x="6" y="6" width="379" height="88"/>
                                         <textFieldCell key="cell" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" focusRingType="none" placeholderString="Message:" drawsBackground="YES" id="3uN-6C-dKE">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </textFieldCell>
                                     </textField>
