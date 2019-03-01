@@ -25,6 +25,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         SocketService.instance.closeConnection()
     }
 
+    func applicationWillHide(_ notification: Notification) {
+        UserDataService.instance.isMinimizing = true
+    }
+    
+    func applicationDidUnhide(_ notification: Notification) {
+        UserDataService.instance.isMinimizing = false
+    }
+    
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
 
 }
 

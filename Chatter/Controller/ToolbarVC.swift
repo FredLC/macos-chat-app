@@ -29,9 +29,13 @@ class ToolbarVC: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.setFrameSize(NSSize(width: 950, height: 600))
     }
     
     override func viewWillAppear() {
+        if UserDataService.instance.isMinimizing {
+            return
+        }
         setupView()
         if AuthService.instance.isLoggedIn {
             AuthService.instance.findUserByEmail { (success) in

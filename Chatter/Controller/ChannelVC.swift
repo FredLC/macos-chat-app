@@ -27,11 +27,17 @@ class ChannelVC: NSViewController {
     }
     
     override func viewWillAppear() {
+        if UserDataService.instance.isMinimizing {
+            return
+        }
         setupView()
         NotificationCenter.default.addObserver(self, selector: #selector(ChannelVC.userDataDidChange(_:)), name: NOTIF_USER_DATA_DID_CHANGE, object: nil)
     }
     
     override func viewDidAppear() {
+        if UserDataService.instance.isMinimizing {
+            return
+        }
         chatVC = self.view.window?.contentViewController?.children[0].children[1] as? ChatVC
         SocketService.instance.getChannel { (success) in
             if success {
