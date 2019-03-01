@@ -1070,6 +1070,9 @@
                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </textFieldCell>
+                                        <connections>
+                                            <action selector="messageEnterSend:" target="4DV-P1-aRd" id="2k9-0X-y1Q"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>

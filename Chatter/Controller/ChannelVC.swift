@@ -58,11 +58,11 @@ class ChannelVC: NSViewController {
     
     @objc func userDataDidChange(_ notif: Notification) {
         if AuthService.instance.isLoggedIn {
-            usernameLabel.stringValue = UserDataService.instance.name
             getChannels()
+            usernameLabel.stringValue = UserDataService.instance.name
         } else {
-            usernameLabel.stringValue = ""
             tableView.reloadData()
+            usernameLabel.stringValue = ""
         }
     }
     
@@ -70,6 +70,9 @@ class ChannelVC: NSViewController {
         MessageService.instance.findAllChannels { (success) in
             if success {
                 self.tableView.reloadData()
+                if MessageService.instance.channels.count > 0 {
+                    self.tableView.selectRowIndexes(IndexSet(integer: self.selectedChannelIndex), byExtendingSelection: false)
+                }
             }
         }
     }
