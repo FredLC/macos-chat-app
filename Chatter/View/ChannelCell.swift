@@ -19,6 +19,13 @@ class ChannelCell: NSTableCellView {
     func configureCell(channel: Channel, selectedChannel: Int, row: Int) {
         let title = channel.channelTitle ?? ""
         channelName.stringValue = "#\(title)"
+        channelName.font = NSFont(name: AVENIR_REGULAR, size: 13.0)
+        
+        for id in MessageService.instance.unreadChannels {
+            if id == channel.id {
+                channelName.font = NSFont(name: AVENIR_BOLD, size: 13.0)
+            }
+        }
         
         wantsLayer = true
         if row == selectedChannel {

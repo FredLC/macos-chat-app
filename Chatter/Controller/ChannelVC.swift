@@ -33,6 +33,21 @@ class ChannelVC: NSViewController {
     
     override func viewDidAppear() {
         chatVC = self.view.window?.contentViewController?.children[0].children[1] as? ChatVC
+        SocketService.instance.getChannel { (success) in
+            if success {
+                self.tableView.reloadData()
+                if MessageService.instance.channels.count > 0 {
+                    self.tableView.selectRowIndexes(IndexSet(integer: self.selectedChannelIndex), byExtendingSelection: false)
+                }
+            }
+        }
+        
+        SocketService.instance.getChatMessage { (newMessage) in
+            if newMessage.channelId != self.selectedChannel?.id && AuthService.instance.isLoggedIn {
+                MessageService.instance.unreadChannels.append(newMessage.channelId)
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func setupView() {
@@ -91,6 +106,10 @@ extension ChannelVC: NSTableViewDelegate, NSTableViewDataSource {
         selectedChannelIndex = tableView.selectedRow
         let channel = MessageService.instance.channels[selectedChannelIndex]
         selectedChannel = channel
+        
+        if MessageService.instance.unreadChannels.count > 0 {
+            MessageService.instance.unreadChannels = MessageService.instance.unreadChannels.filter{$0 != channel.id}
+        }
         chatVC?.updateWithChannel(channel: channel)
         tableView.reloadData()
     }
